@@ -1,25 +1,17 @@
 import './App.scss';
+import NavBar from './components/NavBar/NavBar';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <>
-      <div className='principal'>
-        <div className='secundario'>
-          <h1>Hola Matata</h1>
-          <p>Soy un parrafor y me gujsta asdasd</p>
-        </div>
-        <div className='secundario'>
-          <h1> Hola mono cai</h1>
-          <p>Lolazo queria usar el lorem</p>
-        </div>
-        <div className='botones'>
-          <button className='btn btn-success boton'>Comprar</button>
-          <button className='btn btn-danger boton'>Vender</button>
-          <button className='btn btn-outline-dark boton'>Borrar</button>
-        </div>
-      </div>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<div>Hola soy la Home</div>}/>
+        <Route path="/todolist" element={<div>Hola soy la To Do List</div>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
